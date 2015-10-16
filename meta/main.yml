@@ -4,6 +4,8 @@ galaxy_info:
   description: Simple base providing git, pip, wheel, virtualenv, various utils.
   license: BSD
   min_ansible_version: 1.2
+  categories:
+    - system
 dependencies: []
   # List your role dependencies here, one per line.
   # Be sure to remove the '[]' above if you add dependencies
