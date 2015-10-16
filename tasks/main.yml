@@ -12,6 +12,8 @@
     - python-dev
     - git
     - htop
+    - iotop
+    - jnettop
 
 - name: Get pip, wheel, virtualenv
   easy_install: name={{item}}
