@@ -11,6 +11,7 @@
     - python-setuptools
     - python-dev
     - git
+    - htop
 
 - name: Get pip, wheel, virtualenv
   easy_install: name={{item}}
