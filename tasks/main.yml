@@ -7,13 +7,8 @@
 - name: Get easy_install,git
   apt: name={{item}} update_cache=yes cache_valid_time=1800
   sudo: yes
-  with_items:
-    - python-setuptools
-    - python-dev
-    - git
-    - htop
-    - iotop
-    - jnettop
+  with_items: "{{ lookup('file', 'ubuntu-apt-deps.txt').split() }}"
+
 
 - name: Get pip, wheel, virtualenv
   easy_install: name={{item}}
