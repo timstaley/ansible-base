@@ -1,3 +1,4 @@
 python-setuptools python-dev
 git
 htop iotop jnettop smem
+ntp
