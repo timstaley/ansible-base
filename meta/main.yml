@@ -3,7 +3,7 @@ galaxy_info:
   author: Tim Staley
   description: Simple base providing git, pip, wheel, virtualenv, various utils.
   license: BSD
-  min_ansible_version: 1.2
+  min_ansible_version: 2.0
   categories:
     - system
 dependencies: []

@@ -2,17 +2,17 @@
 # tasks file for base
 - name: Update base packages
   apt: upgrade=safe update_cache=yes cache_valid_time=1800
-  sudo: yes
+  become: yes
 
 - name: Get easy_install,git
   apt: name={{item}} update_cache=yes cache_valid_time=1800
-  sudo: yes
+  become: yes
   with_items: "{{ lookup('file', 'ubuntu-apt-deps.txt').split() }}"
 
 
 - name: Get pip, wheel, virtualenv
   easy_install: name={{item}}
-  sudo: yes
+  become: yes
   with_items:
     - pip
     - wheel
@@ -21,5 +21,5 @@
 - name: Set timezone to UTC
   shell: timedatectl set-timezone UTC
   when: ansible_date_time.tz != "UTC"
-  sudo: yes
+  become: yes
 
