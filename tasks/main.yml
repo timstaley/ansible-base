@@ -1,5 +1,10 @@
 ---
 # tasks file for base
+
+- name: Ensure aptitude installed, for Ansible compatibility on Ubuntu 16.04
+  apt: name=aptitude update_cache=no
+  become: yes
+
 - name: Update base packages
   apt: upgrade=safe update_cache=yes cache_valid_time=1800
   become: yes
