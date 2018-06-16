@@ -9,19 +9,10 @@
   apt: upgrade=safe update_cache=yes cache_valid_time=1800
   become: yes
 
-- name: Get easy_install,git
+- name: Get python-basics,git
   apt: name={{item}} update_cache=yes cache_valid_time=1800
   become: yes
   with_items: "{{ lookup('file', 'ubuntu-apt-deps.txt').split() }}"
-
-
-- name: Get pip, wheel, virtualenv
-  easy_install: name={{item}}
-  become: yes
-  with_items:
-    - pip
-    - wheel
-    - virtualenv
 
 - name: Set timezone to UTC
   shell: timedatectl set-timezone UTC

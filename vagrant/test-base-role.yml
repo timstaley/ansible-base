@@ -1,4 +1,17 @@
 - hosts: test
 
   roles:
-    - { role: ../../base}
+  - { role: ../../base}
+
+  tasks:
+  - name: Ensure we can create a Py3 virtualenv
+    pip:
+      name: "boltons"
+      virtualenv: "~/venv_test_py3"
+      virtualenv_python: "python3"
+
+  - name: Ensure we can create a Py2 virtualenv
+    pip:
+      name: "boltons"
+      virtualenv: "~/venv_test_py2"
+      virtualenv_python: "python2"

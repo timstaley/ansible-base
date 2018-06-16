@@ -1,13 +1,21 @@
 ---
 galaxy_info:
   author: Tim Staley
-  description: Simple base providing git, pip, wheel, virtualenv, various utils.
+  description: Simple base providing git, python basics, various utils.
   license: BSD
   min_ansible_version: 2.0
-  categories:
-    - system
+  
+  platforms:
+  - name: Ubuntu
+    versions:
+    - bionic
+
+  galaxy_tags:
+  - system
+  - base
+  - ubuntu
+
 dependencies: []
   # List your role dependencies here, one per line.
   # Be sure to remove the '[]' above if you add dependencies
   # to this list.
-  
